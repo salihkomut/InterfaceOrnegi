@@ -8,27 +8,47 @@ namespace InterfaceOrnegi
 {
     interface Kutuphane
     {
-        void Oku(string adi);
+        void Al(string ad);
+        void Oku();
     }
     class Kitap : Kutuphane
     {
-        public void Oku(string kitapAi)
+        private string dergiAdi;
+        public void Al(string ad)
         {
-            Console.WriteLine("şu kitap okundu : "+kitapAi);
+            Console.WriteLine("şu kitap alındı : " + ad);
+            dergiAdi = ad;
+        }
+
+        public void Oku()
+        {
+            Console.WriteLine("alınan kitap okundu : "+dergiAdi);
             
         }
     }
     class Ansiklopedi : Kutuphane
     {
-        public void Oku(string adi)
+        private string dergiAdi;
+        public void Al(string ad)
         {
-            Console.WriteLine("ansiklopedi okundu : "+adi);
+            Console.WriteLine("şu ansiklopedi alındı : " + ad);
+            dergiAdi = ad;
+        }
+        public void Oku()
+        {
+            Console.WriteLine("alınan ansiklopedi okundu : "+dergiAdi);
         }
     }
     class Dergi : Kutuphane
     {
-        public void Oku(string adi)
-        { Console.WriteLine("dergi okundu : "+adi); }
+        private string dergiAdi;
+        public void Al(string ad)
+        {
+            Console.WriteLine("şu dergi alındı : " + ad);
+            dergiAdi = ad;
+        }
+        public void Oku()
+        { Console.WriteLine("alınan dergi okundu : " + dergiAdi); }
     }
     internal class Program
     {
@@ -39,14 +59,18 @@ namespace InterfaceOrnegi
             
             
             okunacak = new Kitap();
-            okunacak.Oku("Dede Korkut");
+            okunacak.Al("dede korkut");
+            okunacak.Oku();
+
             
 
             okunacak = new Ansiklopedi();
-            okunacak.Oku("cumhuriyet ansiklopedisi");
+            okunacak.Al("cumhuriyet ansiklopedisi");
+            okunacak.Oku();
 
             okunacak = new Dergi();
-            okunacak.Oku("monstar");
+            okunacak.Al("monstar");
+            okunacak.Oku();
 
             Console.ReadKey();
 
