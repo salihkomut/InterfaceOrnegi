@@ -10,7 +10,7 @@ namespace InterfaceOrnegi
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("Merhaba dünya");
         }
     }
 }
