@@ -10,6 +10,7 @@ namespace InterfaceOrnegi
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
